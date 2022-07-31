@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gasheer - Digital Presence Agency</title>
+    <meta description="Gasheer is an agency that helps business and organisation get online and maintain it's Online presence"/>
+    <style>
+body {
+    margin: 0;
+}
+
+.first-background-gradient {
+    z-index: 1;
+    opacity: 1;
+}
+
+.second-background-gradient {
+    z-index: 0;
+    opacity: 0;
+}
+
+.first-background-gradient,
+.second-background-gradient {
+    width: 100%;
+    height: 100vh;
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -ms-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+    </style>
+</head>
+<body>
+
+	<div class="first-background-gradient"></div>
+  	<div class="second-background-gradient"></div>
+
+<script>
+function randInt(min, max) {
+    return Math.floor( (Math.random() * max) + min );
+};
+function randomRgb() {
+    return "rgb(" + randInt(70, 190) + "," + randInt(70, 190) + "," + randInt(70, 190) + ")";
+};
+
+$(".first-background-gradient").css("background", "linear-gradient(" + randInt(0, 360) + "deg," + randomRgb() + "0%," + randomRgb() + "100%)");
+
+setInterval(function(){ 
+
+    var firstBlock = $(".first-background-gradient");
+    var secondBlock = $(".second-background-gradient");
+    
+    if(firstBlock.css("z-index") === "1") {
+        
+        firstBlock.css("z-index", "0");
+        firstBlock.css("opacity", "0");
+        
+        secondBlock.css("background", "linear-gradient(" + randInt(0, 360) + "deg," + randomRgb() + "0%," + randomRgb() + "100%)");
+        secondBlock.css("z-index", "1");
+        secondBlock.css("opacity", "1");
+    
+    } else {
+        
+        firstBlock.css("background", "linear-gradient(" + randInt(0, 360) + "deg," + randomRgb() + "0%," + randomRgb() + "100%)");
+        firstBlock.css("z-index", "1");
+        firstBlock.css("opacity", "1");
+        
+        secondBlock.css("z-index", "0");
+        secondBlock.css("opacity", "0");
+    
+    } 
+
+}, 2000);
+</script>
+</body>
+
+</html>
