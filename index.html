@@ -12,6 +12,7 @@
    <script src="https://cdn.tailwindcss.com"></script>
     <style>
 body {
+margin: 0;
 	    }
     </style>
 </head>
@@ -35,20 +36,7 @@ body {
       <input class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" placeholder="Filter projects...">
     </form>
   </header>
-  <ul class="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
-    <li x-for="project in projects">
-      <a :href="project.url" class="hover:bg-blue-500 hover:ring-blue-500 hover:shadow-md group rounded-md p-3 bg-white ring-1 ring-slate-200 shadow-sm">
-        <dl class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
-          <div>
-            <dt class="sr-only">Title</dt>
-            <dd class="group-hover:text-white font-semibold text-slate-900">
-              {project.title}
-            </dd>
-          </div>
-          <div>
-            <dt class="sr-only">Category</dt>
-            <dd class="group-hover:text-blue-200">{project.category}</dd>
-          </div>
+  
           <div class="col-start-2 row-start-1 row-end-3 sm:mt-4 lg:mt-0 xl:mt-4">
             <div class="flex justify-center">
 	  <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
@@ -72,18 +60,7 @@ body {
 	  </div>
 	</div>
           </div>
-        </dl>
-      </a>
-    </li>
-    <li class="flex">
-      <a href="/new" class="hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
-        <svg class="group-hover:text-blue-500 mb-1 text-slate-400" width="20" height="20" fill="currentColor" aria-hidden="true">
-          <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
-        </svg>
-        New project
-      </a>
-    </li>
-  </ul>
+        
 </section>
 	
 	
