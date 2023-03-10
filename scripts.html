@@ -5,11 +5,16 @@
 </head>
 <body>
 
-<iframe src="https://codehubapp.live/s/oriner" title="buy php scripts cheaply">
+<iframe id="rheader" src="https://codehubapp.live/s/oriner" title="buy php scripts cheaply">
 </iframe>
 
 <script>
-$("iframe").contents().find("header").remove();
+    //var header = document.getElementByTagName(header)
+    $(document).ready(function(){
+	var iFrameDOM = $("rheader").contents();
+
+	iFrameDOM.find("header").css("background-color", "#fff");
+});
 </script>
 </body>
 </html>
