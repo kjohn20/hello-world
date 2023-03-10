@@ -8,7 +8,6 @@
             width: 100%;
             margin: 0px;
             padding: 0px;
-            height: 1000px;
             overflow-y: hidden;
         }
         iframe{
@@ -25,6 +24,8 @@
 </iframe>
 
 <script>
+    var x = document.getElementById("rheader").width;
+    var bb = document.getElementsByTagName("body").style.height = x+"px";
     //var header = document.getElementByTagName(header)
     $(document).ready(function(){
 	var iFrameDOM = $("rheader").contents();
