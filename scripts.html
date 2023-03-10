@@ -25,14 +25,17 @@
 </iframe>
 
 <script>
-    var x = document.getElementById("rheader").offsetHeight;
-    document.body.style.height = x + "px";
-    //var header = document.getElementByTagName(header)
-    $(document).ready(function(){
-	var iFrameDOM = $("rheader").contents();
+  $(document).ready(function() {
+    var $iframe = $('#rheader');
+    var iframeDOM = $iframe.contents();
 
-	iFrameDOM.find("header").css("background-color", "#fff");
-});
+    // Set the height of the body to match the height of the iframe
+    var iframeHeight = $iframe.get(0).offsetHeight;
+    document.body.style.height = iframeHeight + "px";
+
+    // Change the background color of the header inside the iframe
+    iframeDOM.find('header').css('background-color', '#fff');
+  });
 </script>
 </body>
 </html>
