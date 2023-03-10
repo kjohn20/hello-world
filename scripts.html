@@ -25,13 +25,16 @@
 </iframe>
 
 <script>
-  $(document).ready(function() {
+$(document).ready(function() {
     var $iframe = $('#rheader');
     var iframeDOM = $iframe.contents();
 
-    // Set the height of the body to match the height of the iframe
-    var iframeHeight = $iframe.get(0).offsetHeight;
-    document.body.style.height = iframeHeight + "px";
+    // Wait for the iframe to load
+    $iframe.load(function() {
+      // Set the height of the body to match the height of the iframe
+      var iframeHeight = $iframe.get(0).offsetHeight;
+      document.body.style.height = iframeHeight + "px";
+    });
 
     // Change the background color of the header inside the iframe
     iframeDOM.find('header').css('background-color', '#fff');
