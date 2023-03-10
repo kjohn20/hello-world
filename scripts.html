@@ -32,7 +32,7 @@ $(document).ready(function() {
     // Wait for the iframe to load
     $iframe.load(function() {
       // Set the height of the body to match the height of the iframe
-      var iframeHeight = $iframe.get(0).offsetHeight;
+      var iframeHeight = $iframe.offsetHeight;
       document.body.style.height = iframeHeight + "px";
     });
 
