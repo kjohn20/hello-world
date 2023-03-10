@@ -24,8 +24,8 @@
 </iframe>
 
 <script>
-    var x = document.getElementById("rheader").width;
-    document.body.style.height = "x+px";
+    var x = document.getElementById("rheader").offsetWidth;
+    document.body.style.height = x + "px";
     //var header = document.getElementByTagName(header)
     $(document).ready(function(){
 	var iFrameDOM = $("rheader").contents();
